@@ -12,10 +12,6 @@ router.post('/login', async(req, res) => {
     authController.login(req,res);
 });
 
-router.post('/authStatus', (req, res) => {
-  
-});     
-
 
 
 

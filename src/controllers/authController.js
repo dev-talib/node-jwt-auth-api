@@ -48,16 +48,4 @@ authController.login = async function(req, res) {
 
 };   
 
-authController.authStatus = async function(req, res) {
-    const token = req.body.token;
-    if (!token) return res.status(401).json({ auth: false });
-    try {
-        const verified = jwt.verify(token, process.env.TOKEN_SECRET);
-        res.json({ auth: true, user: verified });
-    } catch (err) {
-        res.status(400).json({ auth: false });
-    }
-
-};   
-
 module.exports = authController;
